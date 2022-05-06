@@ -1,0 +1,419 @@
+/* -------------------------FONT---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
+/* CSS VARIABLES */
+:root {
+    --primary-bg: #000;
+    --secondary-bg: #16181c;
+    --hover-bg: #18181898;
+    --primary-color: #e7e9ea;
+    --secondary-color: #71767b;
+    --primary-btn: #1d9bf0;
+    --secondary-btn: #a7aaaa;
+    --btn-text: #4d5256;
+    --border: #2a2d30 1px solid;
+
+}
+
+
+/*              GENERAL STYLING                */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+}
+body {
+    background: var(--primary-bg);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.blues {
+    color: rgb(51, 103, 247);
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+img {
+    object-fit: cover;
+}
+
+.btn {
+    background: var(--primary-btn);
+    font-weight: 900;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 32px;
+    font-family:'Roboto', sans-serif ;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: rgba(14, 77, 120, 0.7);
+    cursor: pointer;
+}
+
+.big-btn {
+    padding: .7rem 5rem;
+    
+}
+
+.small-btn {
+    padding: .4rem 2rem;
+}
+
+.profile-pic img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.sub-text {
+    font-weight: 300;
+    line-height: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-family:'Roboto', sans-serif ;
+}
+
+.main-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+/*                                 WRAPPER                                             */
+
+.wrapper {
+    margin: 0 5rem;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr; */
+}
+
+/*                                SIDE-MENU                                           */
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+}
+
+.nav {
+    flex: 1 0 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.2s ease-in;
+}
+
+
+
+.side-menu-items li a {
+    font-weight: 400;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    padding: 12px;
+    transition: .2s ease-in;
+    border-radius: 32px;
+}
+
+
+
+.logo:hover,
+.side-menu-items li a:hover,
+.side-menu .profile:hover{
+    background: var(--hover-bg);   
+}
+
+.side-menu-items li a span {
+    margin-right: 1.2rem;
+    
+}
+
+.side-menu-btn {
+    margin: 10px 0;
+}
+
+.side-menu .profile {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.side-menu .more-icon {
+    align-self: flex-end;
+}
+
+
+/* ----------------------TIMELINE--------------------------------------------- */
+
+.timeline {
+    flex: 3 0 46%;
+    border-right: var(--border);
+    border-left: var(--border);
+    position: relative;
+}
+
+.timeline .fixed-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+   /* glassmorphism */
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.6px);
+    -webkit-backdrop-filter: blur(8.6px);
+}
+
+.timeline .fixed-top h2 {
+    font-family:'Roboto', sans-serif ;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.timeline .personal {
+    align-items: center;
+    padding: 0.7rem;
+}
+
+.timeline .personal input {
+    background: transparent;
+    margin-left: 1rem;
+    border: none;
+    font-weight: 300;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+
+.timeline .below-personal{
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: var(--border);
+}
+
+.timeline .below-personal .post-icons i{
+    margin-left: 1rem;
+    color:#1d9bf0;
+    padding: 10px;
+    transition: 0.2s ease-in;
+    border-radius: 100%;
+}
+
+.timeline .below-personal .post-icons i:hover {
+    background: rgba(14, 77, 120, 0.3);
+    cursor: pointer;
+}
+
+
+
+   /*--------------------------------- TWEETS------------------------------------------ */
+
+
+.tweets {
+    border-bottom: var(--border);
+    padding: 1rem;
+    font-family:'Roboto', sans-serif;
+    transition: 0.4s ease-in-out;
+}
+
+.tweets:hover {
+    background-color: var(--hover-bg);
+}
+
+.tweets .profile-pic {
+    margin-right: 1rem;
+}
+
+.tweets .flex-column {
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-column .image-container {
+    margin-top: 1rem;
+    width: 100%;
+    height: 20rem;
+}
+
+.flex-column .image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+}
+
+.tweets .flex-column .profile-username {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.profile-username h3 {
+    margin-right: 1rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.post p {
+    font-weight: 400;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.reactions i{
+    margin: 1rem 4rem 0 0;
+    font-weight: 5px;
+    
+}
+
+.reactions i span {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: var(--secondary-color)
+}
+
+ .reactions .blue:hover,
+ .reactions .blue span:hover {
+    color: rgb(51, 103, 247);
+    cursor: pointer;
+}
+
+ .reactions .green:hover,
+ .reactions .green span:hover {
+    color: rgb(0, 128, 38);
+    cursor: pointer;
+}
+
+ .reactions .red:hover,
+ .reactions .red span:hover {
+    color: rgb(255, 38, 0);
+    cursor: pointer;
+}
+
+/*--------------------------- TREND SIDE------------------------------------------------ */
+
+
+.trend-side {
+    flex: 2 0 30%;
+}
+
+.trend-side .search {
+    padding: 0.7rem 3rem;
+    border-radius: 32px;
+    background: var(--secondary-bg);
+    margin-bottom: 5px;
+    position: sticky;
+    top: 0;
+}
+
+
+
+.trend-side .search input {
+    background: transparent;
+    margin-left: 1rem;
+    outline: none;
+    border: none;
+    align-items: center;
+}
+
+
+/* --------------------------------TREND TABLE ---------------------------------- */
+
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--secondary-bg);
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    font-family:'Roboto', sans-serif ;
+}
+
+.table .flex {
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+    transition: 0.2s ease-in-out;
+}
+
+.table .flex:hover{
+    background: #f2f2f21e;
+}
+
+.trend .main {
+    margin: 5px 0;
+}
+
+.table .flex .more-icon {
+    align-self: flex-start;
+}
+
+.follow-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.follow-btn {
+    align-self: center;
+    margin-right: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    margin-right: 10px;
+}
+
+
+
